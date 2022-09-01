@@ -9,15 +9,18 @@ import TodoForm from "./TodoForm";
  * - update(): fn to call to update a todo
  * - remove(): fn to call to remove a todo
  *
+ * States:
+ * - isEditting - editting status of a todo
+ * 
  * EditableTodoList -> EditableTodo -> { Todo, TodoForm }
  */
 
 function EditableTodo({ todo, update, remove }) {
-  const [editStatus, setEditStatus] = useState(false);
+  const [isEditting, setIsEditting] = useState(false);
 
   /** Toggle if this is being edited */
   function toggleEdit() {
-    setEditStatus(editStatus => editStatus ? false : true);
+    setIsEditting(isEditting => !isEditting);
   }
 
   /** Call remove fn passed to this. */
@@ -34,10 +37,10 @@ function EditableTodo({ todo, update, remove }) {
   return (
     <div className="EditableTodo">
 
-      {editStatus &&
+      {isEditting &&
         <TodoForm initialFormData={todo} handleSave={handleSave} />}
 
-      {!editStatus &&
+      {!isEditting &&
         <div className="mb-3">
           <div className="float-end text-sm-end">
             <button
@@ -52,10 +55,7 @@ function EditableTodo({ todo, update, remove }) {
             </button>
           </div>
           <Todo
-            id={todo.id}
-            title={todo.title}
-            description={todo.description}
-            priority={todo.priority} />
+            todo={todo} />
         </div>
       }
     </div>
