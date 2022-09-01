@@ -9,7 +9,13 @@ import React, { useState } from "react";
  * { TodoApp, EditableTodo } -> TodoForm
  */
 
-function TodoForm({ initialFormData, handleSave }) {
+function TodoForm({ 
+    initialFormData = { 
+      title: "", 
+      description: "", 
+      priority: 1 }, 
+    handleSave }) {
+      
   const [formData, setFormData] = useState(initialFormData);
 
   /** Update form input. */
@@ -28,7 +34,7 @@ function TodoForm({ initialFormData, handleSave }) {
     setFormData({
       title: "",
       description: "",
-      priority: "Ultra-Über"
+      priority: 1
     });
   }
 
@@ -76,8 +82,8 @@ function TodoForm({ initialFormData, handleSave }) {
           </select>
         </div>
         <button
-        className="btn-primary rig btn btn-sm NewTodoForm-addBtn"
-        onClick={handleSubmit}>
+          className="btn-primary rig btn btn-sm NewTodoForm-addBtn"
+          onClick={handleSubmit}>
           Gø!
         </button>
       </div>
