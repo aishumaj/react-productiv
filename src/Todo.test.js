@@ -1,8 +1,7 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import Todo from "./Todo"
-
-const testTodo = {id:1, title:"hello", description: "test", priority:1}
+import { testTodo } from "./_testCommon";
 
 describe("productiv app", function () {
   it("renders without crashing", function () {
@@ -14,10 +13,10 @@ describe("productiv app", function () {
     expect(result.queryByText("hello")).toBeInTheDocument();
     expect(result.queryByText("test")).toBeInTheDocument();
   });
-  
+
   test("matches snapshot", function () {
     const { container } = render(<Todo todo={testTodo}/>);
     expect(container).toMatchSnapshot();
   });
-  
+
 });

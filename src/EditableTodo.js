@@ -11,7 +11,7 @@ import TodoForm from "./TodoForm";
  *
  * States:
  * - isEditting - editting status of a todo
- * 
+ *
  * EditableTodoList -> EditableTodo -> { Todo, TodoForm }
  */
 
