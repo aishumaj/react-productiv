@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`productiv app matches snapshot 1`] = `
+<div>
+  <div
+    class="Todo"
+    id="1"
+  >
+    <div>
+      <b>
+         
+        hello
+         
+      </b>
+       
+      <small>
+         (priority: 
+        1
+        )
+      </small>
+    </div>
+    <div>
+      <small>
+        test
+      </small>
+    </div>
+  </div>
+</div>
+`;
